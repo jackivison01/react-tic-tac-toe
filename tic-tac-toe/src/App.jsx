@@ -101,6 +101,13 @@ export default function Game() {
     )
   })
 
+  function reset() {
+    jumpTo(0);
+    setCurrentMove(0);
+    setHistory([Array(9).fill(null)]);
+    setXIsNext(true);
+  }
+
   return (
     <div className="game">
       <div className="game-board">
@@ -110,7 +117,7 @@ export default function Game() {
         <ol>{moves}</ol>
       </div>
       <div>
-        <button onClick={() => jumpTo(0)}>Reset</button>
+        <button onClick={() => reset()}>Reset</button>
       </div>
     </div>
   );
